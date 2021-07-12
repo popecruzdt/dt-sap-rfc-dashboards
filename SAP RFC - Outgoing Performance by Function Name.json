@@ -5,9 +5,9 @@
     ],
     "clusterVersion": "1.221.85.20210706-125915"
   },
-  "id": "588f3383-089c-4809-91aa-dbe4e883adb6",
+  "id": "cc8ab771-47a8-4056-ac24-fd93346ccbb1",
   "dashboardMetadata": {
-    "name": "SAP RFC - Incoming Performance",
+    "name": "SAP RFC - Outgoing Performance by Function Name",
     "shared": true,
     "owner": "anthony.pope-cruz@dynatrace.com",
     "tags": [
@@ -22,7 +22,7 @@
   },
   "tiles": [
     {
-      "name": "Incoming Request Throughput",
+      "name": "Outgoing Request Throughput",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
@@ -34,7 +34,7 @@
       "tileFilter": {}
     },
     {
-      "name": "Incoming Execution Response Time",
+      "name": "Outgoing Execution Response Time - Average (milliseconds)",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
@@ -46,11 +46,11 @@
       "tileFilter": {}
     },
     {
-      "name": "Incoming Send Throughput",
+      "name": "Outgoing Send Throughput",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 722,
+        "top": 1482,
         "left": 0,
         "width": 912,
         "height": 38
@@ -58,11 +58,11 @@
       "tileFilter": {}
     },
     {
-      "name": "Incoming Receive Throughput",
+      "name": "Outgoing Receive Throughput",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 722,
+        "top": 1482,
         "left": 950,
         "width": 912,
         "height": 38
@@ -70,11 +70,23 @@
       "tileFilter": {}
     },
     {
-      "name": "Incoming Call Response Time",
+      "name": "Outgoing Call Response Time - Average (milliseconds)",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
         "top": 342,
+        "left": 950,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Outgoing Performance Breakdowns",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
         "left": 950,
         "width": 912,
         "height": 38
@@ -92,824 +104,7 @@
         "height": 266
       },
       "tileFilter": {},
-      "markdown": "[Account](#dashboard;id=acf68f36-cec0-4970-9b59-8d9c15fe485f)\n\n[Client Number](#dashboard;id=0629d9ba-a358-4bf6-a22d-da929013a5d6)\n\n[Entry ID](#dashboard;id=cd9a89cf-8295-44b3-aead-664cd6290410)\n\n[Function Name](#dashboard;id=364e4a53-640d-44b9-acfa-176a4ca6ac7f)\n\n[Host](#dashboard;id=f4fd653b-31f9-4515-9665-26707a981cb0)\n\n[Instance Number](#dashboard;id=9a21e213-7481-4fc4-875c-a52ccda08117)"
-    },
-    {
-      "name": "Incoming Performance Breakdowns",
-      "tileType": "HEADER",
-      "configured": true,
-      "bounds": {
-        "top": 0,
-        "left": 950,
-        "width": 760,
-        "height": 38
-      },
-      "tileFilter": {}
-    },
-    {
-      "name": "Incoming Requests",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 0,
-        "width": 304,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingRequests",
-          "spaceAggregation": "SUM",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Requests",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 304,
-        "width": 608,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingRequests",
-          "spaceAggregation": "SUM",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Execution Time (AVG)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 380,
-        "left": 0,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Execution Time (MED)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 0,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "MEDIAN",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Execution Time (90TH)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 608,
-        "left": 0,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "PERCENTILE_90",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Execution Time",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 380,
-        "left": 304,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "C",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "PERCENTILE_90",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        },
-        {
-          "id": "D",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        },
-        {
-          "id": "E",
-          "metric": "sap.rfcIncomingExecutionTime",
-          "spaceAggregation": "MEDIAN",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Send",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 760,
-        "left": 0,
-        "width": 304,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingSend",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Send",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 760,
-        "left": 304,
-        "width": 608,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingSend",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Receive",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 760,
-        "left": 950,
-        "width": 304,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingReceive",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Receive",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 760,
-        "left": 1254,
-        "width": 608,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingReceive",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Call Time (AVG)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 380,
-        "left": 950,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Call Time (MED)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 950,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "MEDIAN",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Call Time (90TH)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 608,
-        "left": 950,
-        "width": 304,
-        "height": 114
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "PERCENTILE_90",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "SINGLE_VALUE",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE",
-          "hasTrendline": false
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
-    },
-    {
-      "name": "Incoming Call Time",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "bounds": {
-        "top": 380,
-        "left": 1254,
-        "width": 608,
-        "height": 342
-      },
-      "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "PERCENTILE_90",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        },
-        {
-          "id": "B",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        },
-        {
-          "id": "C",
-          "metric": "sap.rfcIncomingCallTime",
-          "spaceAggregation": "MEDIAN",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "sortBy": "DESC",
-          "limit": 10,
-          "enabled": true
-        }
-      ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "sap.rfcOutgoingSend",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [],
-        "axes": {
-          "xAxis": {
-            "visible": true
-          },
-          "yAxes": []
-        }
-      }
+      "markdown": "[Account](#dashboard;id=b8907259-c1ae-4e87-a423-5a4e88d06197)\n\n[Client Number](#dashboard;id=318551b6-d9cd-4464-813e-07f45a10ebad)\n\n[Entry ID](#dashboard;id=b8a91806-ec11-4441-991e-1327d4f50f88)\n\n[Function Name](#dashboard;id=cc8ab771-47a8-4056-ac24-fd93346ccbb1)\n\n[Host](#dashboard;id=492f6c3c-cdf6-43c7-a6f1-3c65823c658f)\n\n[Instance Number](#dashboard;id=93f6c4ea-7e35-4e8a-97d6-d7881e0f0368)"
     },
     {
       "name": "Markdown",
@@ -922,7 +117,7 @@
         "height": 266
       },
       "tileFilter": {},
-      "markdown": "[Local Destination](#dashboard;id=facd8907-ae07-419a-b58b-d8397cd0d9c9)\n\n[Program Name](#dashboard;id=b43b3b8c-7dfe-4cb3-80b1-f83cd7995104)\n\n[Remote Destination](#dashboard;id=d1931b1a-fce8-4366-8c0d-944580ca15eb)\n\n[SID](#dashboard;id=9d1ba9c8-70e9-412f-8b44-eba24605e1f4)\n\n[Target](#dashboard;id=aa1cd76d-92ca-4c86-9468-a97b7bd3e9d8)\n\n[Task Type](#dashboard;id=26536526-97ac-49e1-95c9-e2e4b2e66c46)"
+      "markdown": "[Local Destination](#dashboard;id=800f0f83-ced6-40f4-831c-4bc41778bf6b)\n\n[Program Name](#dashboard;id=afb94afa-69f5-4b74-95a3-153aa7b389c7)\n\n[Remote Destination](#dashboard;id=d77cc9ac-7b98-4b23-89bd-ee775f20fbf2)\n\n[SID](#dashboard;id=585c4d4f-966f-46d7-ad09-64cc26e482bb)\n\n[Target](#dashboard;id=1544dd4b-c076-49a1-be86-fda2514842cf)\n\n[Task Type](#dashboard;id=6639085c-3900-4fe2-a5dc-e59fb3f581ec)"
     },
     {
       "name": "Markdown",
@@ -935,20 +130,1063 @@
         "height": 266
       },
       "tileFilter": {},
-      "markdown": "[User ID](#dashboard;id=da9be39f-cea5-4d3a-9f7b-323e56f18eff)\n\n[SAP Custom Device](#dashboard;id=9058df71-1888-4152-b81d-eae2092407f7)\n\n[Return to Aggregate](#dashboard;id=588f3383-089c-4809-91aa-dbe4e883adb6)"
+      "markdown": "[User ID](#dashboard;id=ac43f920-0afd-423a-b2b2-d960342e88cd)\n\n[SAP Custom Device](#dashboard;id=ee95786e-c8b6-4b72-a0c0-fa55ec9e9f1c)\n\n[Return to Aggregate](#dashboard;id=d536d191-fc72-4708-9010-54fde75dd319)"
     },
     {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
+      "name": "Outgoing Execution Response Time - Median (milliseconds)",
+      "tileType": "HEADER",
       "configured": true,
       "bounds": {
-        "top": 0,
-        "left": 1710,
-        "width": 152,
+        "top": 722,
+        "left": 0,
+        "width": 912,
         "height": 38
       },
+      "tileFilter": {}
+    },
+    {
+      "name": "Outgoing Execution Response Time - 90th Percentile (milliseconds)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 0,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Outgoing Call Response Time - Median (milliseconds)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 950,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Outgoing Call Response Time - 90th Percentile (milliseconds)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 950,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Outgoing Requests",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
       "tileFilter": {},
-      "markdown": "###[↩︎ Back](#dashboard;id=188f43c5-99c3-483d-8b6a-4d666508c373)"
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingRequests",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Requests",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 304,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingRequests",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time (AVG)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 304,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time (MED)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 0,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 304,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "C",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time (90TH)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 0,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "PERCENTILE_90",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Execution Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 304,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingExecutionTime",
+          "spaceAggregation": "PERCENTILE_90",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Send",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingSend",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Send",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 304,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingSend",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Receive",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 950,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingReceive",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Receive",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 1254,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingReceive",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time (90TH)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 950,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "PERCENTILE_90",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 1254,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "PERCENTILE_90",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time (MED)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 950,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 1254,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "C",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time (AVG)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 950,
+        "width": 304,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Outgoing Call Time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 1254,
+        "width": 608,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "B",
+          "metric": "sap.rfcOutgoingCallTime",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "function_name"
+          ],
+          "sortBy": "DESC",
+          "limit": 10,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "sap.rfcOutgoingSend",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
     }
   ]
 }
